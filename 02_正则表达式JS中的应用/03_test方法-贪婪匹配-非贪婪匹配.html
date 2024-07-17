@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var reg = /\d+/g;
+        var str = '1234abc123aaa'
+
+        console.log(str, reg.lastIndex, reg.test(str), reg.lastIndex)   // 1234abc123aaa  0    true    4
+        console.log(str, reg.lastIndex, reg.test(str), reg.lastIndex)   // 1234abc123aaa  6    true    10
+        console.log(str, reg.lastIndex, reg.test(str), reg.lastIndex)   // 1234abc123aaa  10   false   0
+        console.log(str, reg.lastIndex, reg.test(str), reg.lastIndex)   // 1234abc123aaa  0    true    4
+        console.log(str, reg.lastIndex, reg.test(str), reg.lastIndex)   // 1234abc123aaa  4    true    10
+        console.log(str, reg.lastIndex, reg.test(str), reg.lastIndex)   // 1234abc123aaa  10   false   0
+
+        // 疑问，该正则一次匹配多少个数字呢？
+
+        // 默认情况下是贪婪匹配，尽可能多的匹配；因此，首次匹配匹配尽可能多的数字，直接匹配到 1234。下次匹配直接就从 4 这个位置开始
+
+
+        // 但是在 量词 后加上 ?，表示进入非贪婪模式。每次匹配尽可能少的匹配。
+        var reg1 = /\d+?/g;
+        var str1 = '1234abc123aaa'
+
+        console.log(str1, reg1.lastIndex, reg1.test(str1), reg1.lastIndex)   // 1234abc123aaa  0    true    1
+        console.log(str1, reg1.lastIndex, reg1.test(str1), reg1.lastIndex)   // 1234abc123aaa  1    true    2
+        console.log(str1, reg1.lastIndex, reg1.test(str1), reg1.lastIndex)   // 1234abc123aaa  2    false   3
+        console.log(str1, reg1.lastIndex, reg1.test(str1), reg1.lastIndex)   // 1234abc123aaa  3    true    4
+        console.log(str1, reg1.lastIndex, reg1.test(str1), reg1.lastIndex)   // 1234abc123aaa  4    true    8
+        console.log(str1, reg1.lastIndex, reg1.test(str1), reg1.lastIndex)   // 1234abc123aaa  8    false   9
+    </script>
+</body>
+</html>

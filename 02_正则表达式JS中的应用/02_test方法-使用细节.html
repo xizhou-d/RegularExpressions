@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var reg = /abc/g
+        var s = '111abc111abc111'
+
+        console.log(s, reg.lastIndex, reg.test(s), reg.lastIndex)   // 111abc111abc111  0    true    6
+        console.log(s, reg.lastIndex, reg.test(s), reg.lastIndex)   // 111abc111abc111  6    true    12
+        console.log(s, reg.lastIndex, reg.test(s), reg.lastIndex)   // 111abc111abc111  12   false   0
+        console.log(s, reg.lastIndex, reg.test(s), reg.lastIndex)   // 111abc111abc111  0    true    6
+        console.log(s, reg.lastIndex, reg.test(s), reg.lastIndex)   // 111abc111abc111  6    true    12
+        console.log(s, reg.lastIndex, reg.test(s), reg.lastIndex)   // 111abc111abc111  12   false   0
+    </script>
+</body>
+</html>
