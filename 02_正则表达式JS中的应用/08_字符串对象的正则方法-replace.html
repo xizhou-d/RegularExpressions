@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s = "hello world";
+        // 单词首字母大写
+        console.log('s', s)
+        s = s.replace(/\b[a-z]/g, ',')
+        console.log('s', s)  
+    </script>
+    <script>
+        // replace 第二个参数可以是一个函数，用来匹配匹配到的结果
+        var s1 = "hello world";
+        // 单词首字母大写
+        console.log('s1', s1)
+        s1 = s1.replace(/\b[a-z]/g, function(match) {
+            console.log('match', match, match.length)
+            return match.toUpperCase()
+        })
+        console.log('s1', s1)  
+    </script>
+    <script>
+        // replace 第二个参数可以是一个函数，用来匹配匹配到的结果
+        var s2 = "hello world\tjavascript\nyes"
+        // 单词首字母大写
+        console.log('s2', s2)
+        s2 = s2.replace(/\s*\b[a-z]\s*/g, function(match) {
+            console.log('match', match)
+            return match.toUpperCase().trim()
+        })
+        console.log('s2', s2)  
+    </script>
+</body>
+</html>

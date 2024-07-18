@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 全局匹配
+        var reg = /\d+/g;
+        var s = '1234abc123aaa'
+
+        var result = s.match(reg)
+        console.log('result', result)   // ['1234', '123']
+    </script>
+    <script>
+        // 非全局匹配
+        var reg1 = /\d+/;
+        var s1 = '1234abc123aaa'
+
+        var result1 = s1.match(reg1)
+        console.log('result1', result1)   // 每次从头匹配，匹配到之后立马停止。下次匹配又从头开始。
+    </script>
+</body>
+</html>

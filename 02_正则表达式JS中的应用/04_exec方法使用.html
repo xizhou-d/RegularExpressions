@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // exec 方法匹配规则从左至右和 test方法一致
+        var reg = /\d+/g;
+        var s = '1234abc123aaa'
+
+        console.log(s, reg.exec(s))
+        console.log(s, reg.exec(s))
+        console.log(s, reg.exec(s))
+        console.log(s, reg.exec(s))
+        console.log(s, reg.exec(s))
+        console.log(s, reg.exec(s))
+    </script>
+
+    <script>
+        // 获取匹配结果
+        while(result = reg.exec(s)) {
+            console.log(`result: ${result} -- lastIndex: ${reg.lastIndex}`)
+        }
+    </script>
+</body>
+</html>

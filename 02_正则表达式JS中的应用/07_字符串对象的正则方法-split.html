@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s = "asddsf, fgdfgd asfdg-dfgdfga\tsfsdf";
+        // 如果想同时用多种分隔符，可以使用正则
+
+        //按照逗号、空格、横杠、制表符进行分割
+        var result = s.split(/[, \-\t]/);
+        console.log('result', result)
+    </script>
+</body>
+</html>
