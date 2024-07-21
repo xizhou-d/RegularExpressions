@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s = "2015-5-1, 2019-6-19, 2000-04-28";
+        //得到每一个日期，并得到每个日期的年月日
+        var reg = /(?:\d{4})-(?:\d{1,2})-(?<day>\d{1,2})/g;
+        while(result1 = reg.exec(s)) {
+            console.log('result1', result1)
+            console.log('result1[groups]', `year: ${result1.groups.year}, month: ${result1.groups.month}, day: ${result1.groups.day}`)
+        }
+    </script>
+</body>
+</html>
