@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const str = 'aaaaaabbbbbbccccccddddddeeeeeeffffff'
+        // 找出该字符串中的连续字符
+        const reg = /(?<char>\w)\k<char>+/g 
+
+        while(result = reg.exec(str)) {
+            // 仅仅打印捕获组
+            console.log('result[1]', result[1])
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s = "2015-5-1, - 2019-6-19, - 2000-04-28";
+        //得到每一个日期，并得到每个日期的年月日
+        var reg = /(\d{4})-(\d{1,2})-(\d{1,2})/g;
+        // 在使用 replace 的时候，回调函数的参数从第二个开始就是捕获组捕获到的内容
+        s = s.replace(reg, "$1/$2/$3")
+        console.log('s', s)
+    </script>
+</body>
+</html>

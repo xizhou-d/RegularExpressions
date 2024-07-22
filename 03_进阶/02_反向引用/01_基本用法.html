@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // \捕获组编号 就是反向引用，可以方便引用。引用之前的捕获组
+        const reg = /(\d{2})\1/g
+        const str = '1212'
+
+        console.log(reg.test(str))
+    </script>
+</body>
+</html>
