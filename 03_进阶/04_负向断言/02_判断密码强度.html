@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 判断密码强度
+        // 要求密码中必须出现小写字母、大写字母、数字、特殊字符（！@#_•）］
+        let s = "24dff34A."
+        const reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#_,.]).{6,12}$/g
+        console.log(reg.test(s))
+    </script>
+</body>
+</html>

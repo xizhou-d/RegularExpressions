@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 负向断言 (?!\d+) ?!
+        let str = 'lkl231lkk12k21k2k2kl12k32k3'
+        const reg = /[a-zA-Z](?!\d+)/g
+
+        while(result = reg.exec(str)) {
+            console.log('result', result)
+        }
+    </script>
+</body>
+</html>
