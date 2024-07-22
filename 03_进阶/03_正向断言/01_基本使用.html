@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // (?=\d+)  ?= 的意思就是正向预查 => 正向断言。表示符合要求但是 预查不作为匹配结果，匹配的是前边的内容
+        const str = 'hjkhkj2kj234kjk2jkh2j34hkjhkj234j2k3j'
+        const reg = /[a-zA-Z](?=\d+)/g
+
+        while(result = reg.exec(str)) {
+            console.log('result', result)
+        }
+    </script>
+</body>
+</html>

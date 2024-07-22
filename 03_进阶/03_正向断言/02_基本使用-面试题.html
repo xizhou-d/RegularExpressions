@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = '789898987895'
+        // 从右至左每 3 为加一个逗号 '78,989,898,789'
+        const reg = /(?=(\d{3})+$)/g    // 这个正则表达式表示匹配一个空字符，这个空字符后边必须有 3 的倍数个数的数字
+        // 将匹配到的空字符替换成为 ,
+        str = str.replace(reg, ',')
+        console.log('str', str)
+    </script>
+</body>
+</html>
